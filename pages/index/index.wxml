@@ -1,0 +1,3 @@
+<view>
+  <view wx:for="{{info}}">{{item.time}}</view>
+</view>
