@@ -9,7 +9,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     info:[
-      {time:'1:15:10',second:4510},
+      {time:'0:00:11',second:11},
       {time:'2:20:47',second:8447}
     ],
     inteval:''
@@ -42,30 +42,37 @@ Page({
      } 
     } 
     var result = '';
-    if(theTime > 0){
+    if(theTime > 0){  //秒
       if(theTime <10){
-        timeZero = 0
+        timeZero = "0"
       }
      result = "" + timeZero +parseInt(theTime);
     }else{
       result = "00";
     }
-    if(theTime1 > 0) { 
+
+
+    if(theTime1 > 0) {   //分
       if(theTime1 <10){
-        time1Zero = 0
+        time1Zero = "0"
       }
      result = "" + time1Zero+parseInt(theTime1)+":"+result; 
     }else{
-      result = "00"
+      result = "00" +":"+result
     } 
-    if(theTime2 > 0) { 
+
+
+    if(theTime2 > 0) {   //小时
      result = ""+parseInt(theTime2)+":"+result; 
     }else{
-      result = "0"
+      result = "0" + ':' +result
     } 
-    if(theTime3 > 0) { 
-     result = ""+parseInt(theTime3)+":"+result; 
-    }
+
+
+    // if(theTime3 > 0) {   //天
+    //  result = ""+parseInt(theTime3)+":"+result; 
+    // }
+    console.log(result)
     return result; 
    },
   onLoad: function () {
