@@ -76,6 +76,9 @@ Page({
     return result; 
    },
   onLoad: function () {
+    wx.hideTabBar({
+      animation: false,
+    })
     var that = this;
     var info = that.data.info;
     this.data.inteval = setInterval(function(){
